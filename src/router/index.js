@@ -13,19 +13,24 @@ export default new VueRouter({
     //配置路由
     routes:[{
         path:"/home",
-        component:Home
+        component:Home,
+        meta:{show:true}
     },
     {
-        path:"/search",
-        component:Search
+        path:"/search/:keyword?",
+        component:Search,
+        meta:{show:true},
+        name:"search"
     },
     {
         path:"/login",
-        component:Login
+        component:Login,
+        meta:{show:false}
     },
     {
         path:"/register",
-        component:Register
+        component:Register,
+        meta:{show:false}
     },
     {
         //重定向,在项目跑起来以后,访问/ 立马定向到首页
