@@ -12,7 +12,7 @@ const requests = axios.create({
 requests.interceptors.request.use((config) => {
   //config:配置对象，对象中有一个属性很重要(即：headers请求头)
   return config;
-});
+})
 //响应拦截器
 requests.interceptors.request.use(
   //响应成功的回调函数：服务器响应数据回来之后，响应拦截器可检测到，可做一些事情
