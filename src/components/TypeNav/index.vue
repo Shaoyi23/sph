@@ -14,7 +14,7 @@
       </nav>
       <div class="sort">
         <div class="all-sort-list2">
-          //遍历获取到的数据
+          <!--遍历获取到的数据 -->
           <div class="item" v-for="(c1,index) in categoryList" :key="c1.categoryId">
             <h3>
               <a href="">{{c1.categoryName}}</a>
