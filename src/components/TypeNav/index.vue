@@ -14,9 +14,10 @@
             >
               <!-- 传入index -->
               <h3 @mouseenter="changeIndex(index)">
-                <a href="">{{ c1.categoryName }}--{{ index }}</a>
+                <a href="">{{ c1.categoryName }}</a>
               </h3>
-              <div class="item-list clearfix">
+              <!-- 二三级分类 -->
+              <div class="item-list clearfix" :style="{display:currentIndex == index?'block':'none'}">
                 <div
                   class="subitem"
                   v-for="(c2, index) in c1.categoryChild"
@@ -79,9 +80,9 @@ export default {
       //index是鼠标移到一级菜单返回的索引值
       this.currentIndex = index;
     },
-    leaveIndex(){
-      this.currentIndex = -1
-    }
+    leaveIndex() {
+      this.currentIndex = -1;
+    },
   },
 };
 </script>
@@ -193,12 +194,6 @@ export default {
                   }
                 }
               }
-            }
-          }
-
-          &:hover {
-            .item-list {
-              display: block;
             }
           }
         }
