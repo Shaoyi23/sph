@@ -100,8 +100,18 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 export default {
-  name: '',
+  name: "",
+  mounted() {
+    // 派发ajax请求
+    this.$store.dispatch("getBannerList");
+  },
+  computed: {
+    ...mapState({
+      bannerList: (state) => state.home.bannerList,
+    }),
+  },
 };
 </script>
 
