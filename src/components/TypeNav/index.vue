@@ -3,7 +3,7 @@
     <div class="container">
       <div @mouseleave="leaveShow" @mouseenter="enterShow">
         <h2 class="all">全部商品分类</h2>
-        <!-- 过渡动画 -->
+        <!-- 加入过渡动画 -->
         <transition name="sort">
           <div class="sort" v-show="show">
             <div class="all-sort-list2" @click="goSearch">
@@ -77,7 +77,7 @@
 
 <script>
 import { mapState } from "vuex";
-//按需加载引入节流js
+//按需加载引入节流函数
 import throttle from "lodash/throttle";
 export default {
   name: "TypeNav",
@@ -137,11 +137,13 @@ export default {
         }
       }
     },
+    //鼠标移入事件
     enterShow() {
       if (this.$route.path != "/home") {
         this.show = true;
       }
     },
+    //鼠标移出事件
     leaveShow() {
       this.currentIndex = -1;
       if (this.$route.path != "/home") {
@@ -267,12 +269,14 @@ export default {
         }
       }
     }
+    //过渡动画开始
     .sort-enter {
       height: 0px;
-    }
+    }//过渡动画结束
     .sort-enter-to {
       height: 461px;
     }
+    //动画样式
     .sort-enter-active {
       transition: all 0.5s linear;
     }
