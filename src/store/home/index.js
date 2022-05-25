@@ -1,5 +1,6 @@
 //home的小模块仓库
 import { reqCategoryList, reqGetBannerList } from "@/api";
+//vuex三件套
 const state = {
   //起始值为空数组
   //home仓库存储三级菜单的数据

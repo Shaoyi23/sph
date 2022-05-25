@@ -8,6 +8,8 @@ import TypeNav from "@/components/TypeNav";
 import store from "@/store"
 //引入mock模拟数据
 import "@/mock/mockServe"
+//引入swiper
+import "swiper/css/swiper.css"
 //第一个参数:全局组件的名字
 //第二个参数:哪一个组件
 Vue.component(TypeNav.name, TypeNav);
