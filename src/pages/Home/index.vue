@@ -6,12 +6,10 @@
     <Recommend />
     <Rank />
     <Like />
-    <Floor />
-    <!-- 组件复用一次 -->
-    <Floor />
+    <Floor v-for="(floor, index) in floorList" :key="floor.id" :list="floor" />
     <Brand />
   </div>
-</template>
+</template> 
 
 <script>
 //引入其余组件
@@ -21,6 +19,7 @@ import Rank from "@/pages/Home/Rank";
 import Like from "@/pages/Home/Like";
 import Floor from "@/pages/Home/Floor";
 import Brand from "@/pages/Home/Brand";
+import { mapState } from 'vuex'
 export default {
   name: "",
   components: {
@@ -31,7 +30,16 @@ export default {
     Floor,
     Brand,
   },
-};
+  //派发action请求,不能在floor内部派发,区别于bannerList的内部请求!!!!!!!!!!!!!
+  mounted() {
+    this.$store.dispatch("getFloorList");
+  },
+  computed: {
+    ...mapState({
+      floorList: state => state.home.floorList,
+    }),
+  },
+}; 
 </script>
 
 <style scoped>
