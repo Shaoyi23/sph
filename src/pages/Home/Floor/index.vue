@@ -6,8 +6,12 @@
         <h3 class="fl">{{ list.name }}</h3>
         <div class="fr">
           <ul class="nav-tabs clearfix">
-            <li class="active" v-for="(nav,index) in list.navList" :key="index">
-              <a href="#tab1" data-toggle="tab">{{nav.text}}</a>
+            <li
+              class="active"
+              v-for="(nav, index) in list.navList"
+              :key="index"
+            >
+              <a href="#tab1" data-toggle="tab">{{ nav.text }}</a>
             </li>
           </ul>
         </div>
@@ -25,25 +29,8 @@
               <img :src="list.imgUrl" />
             </div>
             <div class="floorBanner">
-              <!-- 从父组件获取数据,因此可以使用ref属性,区别于bannerList的请求 -->
-              <div class="swiper-container" ref="floor1Swiper">
-                <div class="swiper-wrapper">
-                  <!-- 遍历========== -->
-                  <div
-                    class="swiper-slide"
-                    v-for="(carousel, index) in list.carouselList"
-                    :key="carousel.id"
-                  >
-                    <img :src="carousel.imgUrl" />
-                  </div>
-                </div>
-                <!-- 如果需要分页器 -->
-                <div class="swiper-pagination"></div>
-
-                <!-- 如果需要导航按钮 -->
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
-              </div>
+             <!-- 轮播图的地方 -->
+              <Carousel :list="list.carouselList" />
             </div>
             <!-- 这五张图不能v-for遍历 -->
             <div class="split">
@@ -75,27 +62,14 @@
 </template>
 
 <script>
-import Swiper from "swiper";
 export default {
-  name: "index",
+  name: "",
   //父子通信
   props: ["list"],
   //组件挂载完毕的地方
-  mounted() {
-    var mySwiper = new Swiper(this.$refs.floor1Swiper, {
-      loop: true,
-      pagination: {
-        el: ".swiper-pagination",
-        //分页器是否可点击
-        clickable: true,
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-    });
-  },
-  computed: {},
+  mounted() {},
+
+  
 };
 </script>
 
