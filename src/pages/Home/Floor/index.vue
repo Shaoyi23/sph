@@ -29,7 +29,7 @@
               <img :src="list.imgUrl" />
             </div>
             <div class="floorBanner">
-             <!-- 轮播图的地方 -->
+              <!-- 轮播图的地方 -->
               <Carousel :list="list.carouselList" />
             </div>
             <!-- 这五张图不能v-for遍历 -->
@@ -68,8 +68,6 @@ export default {
   props: ["list"],
   //组件挂载完毕的地方
   mounted() {},
-
-  
 };
 </script>
 

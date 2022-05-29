@@ -2,7 +2,7 @@
 <template>
   <div class="swiper-container" ref="floor1Swiper">
     <div class="swiper-wrapper">
-      <!-- 遍历========== -->
+      <!-- 遍历图片========== -->
       <div
         class="swiper-slide"
         v-for="(carousel, index) in list"
