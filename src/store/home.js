@@ -1,5 +1,9 @@
 //home的小模块仓库
-import { reqCategoryList, reqFloorList, reqGetBannerList } from "@/api";
+import {
+  reqCategoryList,
+  reqFloorList,
+  reqGetBannerList,
+} from "@/api";
 import { floor } from "lodash";
 //vuex三件套======
 const state = {
@@ -9,7 +13,7 @@ const state = {
   //获取轮播图的数据
   bannerList: [],
   //获取floor数据
-  floorList:[],
+  floorList: [],
 };
 //mutations是唯一修改state的地方
 const mutations = {
@@ -48,7 +52,8 @@ const actions = {
     }
   },
 };
-const getters = {};
+const getters = {
+};
 //对外暴露
 export default {
   state,

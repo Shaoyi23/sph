@@ -4,6 +4,7 @@ import Vuex from "vuex"
 Vue.use(Vuex);
 import home from "./home"
 import search from "./search"
+import { reqGetSearchinfo } from "@/api";
 
 export default new Vuex.Store({
     modules:{
